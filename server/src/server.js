@@ -5,7 +5,18 @@ const app = express()
 
 app.use(express.json())
 
-const port = 2244;
+const port = 2238;
+
+//controllers
+
+const placeController = require("./controllers/placeController")
+
+const cityController = require("./controllers/cityController")
+
+//
+app.use("/place", placeController)
+
+app.use("/city", cityController)
 
 
 app.listen(port, async() => {

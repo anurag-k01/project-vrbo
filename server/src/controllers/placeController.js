@@ -1,6 +1,6 @@
 const express = require("express")
 
-const Place = require("../models/places.model")
+const Place = require("../models/place.model")
 
 const router = express.Router()
 
@@ -22,6 +22,16 @@ router.get("", async(req, res) => {
     return res.status(200).send({place})
 })
 
+//patch request
+
+router.get("/place/:id", async(req, res) => {
+
+    const place = await Place.findByIdAndUpdate(req.params.id, req.body, {new : true})
+
+    return res.status(200).send({place})
+})
+
 
 module.exports = router
+
 
