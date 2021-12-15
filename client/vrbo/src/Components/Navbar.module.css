@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  background-color: rgb(249, 248, 247);
+  /* border: 1px solid black; */
+  height: 72px;
+}
+.headerInner {
+  display: flex;
+  /* border: 1px solid green; */
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 15px 5px 10px 20px;
+}
+.headerLogo {
+  display: flex;
+  flex-grow: 18;
+  /* width: 40%; */
+  /* border: 1px solid red; */
+}
+.headerLogo > img {
+  /* height: 100px; */
+  width: 120px;
+}
+.headerRight {
+  display: flex;
+  flex-grow: 10;
+  justify-content: space-between;
+  /* border: 1px solid yellow; */
+  /* justify-content: center; */
+}
+.headerOption {
+  color: rgb(32, 66, 125);
+  padding: 2px 2px 2px 2px;
+  cursor: pointer;
+}
+.headerOption:hover {
+  background-color: white;
+}
+.headerOption:nth-child(7) {
+  /* cursor: pointer; */
+  margin-right: 20px;
+}
+.headerOption:nth-child(7) :hover {
+  border: 3px solid rgb(32, 66, 125);
+}
+.headerOption > h4 {
+  font-weight: 600;
+  font-size: 14px;
+}
+.headerOption > h4 > .MuiSvgIcon-root {
+  margin-top: 3px !important;
+}
+.headerButton {
+  cursor: pointer;
+  padding: 5px 10px 3px 10px;
+  height: 40px;
+  width: 140px;
+  background: none;
+  /* border: none; */
+  border-color: rgb(32, 66, 125);
+  border-radius: 20px;
+  color: rgb(32, 66, 125);
+}

@@ -1,0 +1,21 @@
+.appBody {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 100px;
+  width: 93%;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.bodyContents {
+  height: 100px;
+  width: 86%;
+  /* border: 1px solid black; */
+}
+.inspired {
+  padding-top: 30px;
+  font-family: FreightSansLF Pro, Noto Sans JP, Noto Sans KR, Helvetica Neue,
+    Helvetica, Arial, Lucida Grande, Segoe UI, Tahoma, -apple-system, Roboto,
+    sans-serif;
+}
