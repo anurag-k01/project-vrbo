@@ -5,7 +5,7 @@ const placeSchema = new mongoose.Schema({
 
 
     heading1: {type:String, required: true},
-    main_image_url: {type: String , required: true},
+    image1_url: {type: String , required: true},
     image2_url: {type: String , required: true},
     image3_url: {type: String , required: true},
     image4_url: {type: String , required: true},
@@ -26,10 +26,29 @@ const placeSchema = new mongoose.Schema({
     heading_description: {type: String, required: true},
     description: {type: String, required: true},
 
-    price: {type: String, required: true},
+    price: {type: Number, required: true},
     ratings: {type: Number, required: true},
 
+    //amenities
+
+    tv: {type: String, required: true},
+    internet: {type: String, required: true},
+    satellite: {type: String, required: true},
+    heater: {type: String, required: true},
+    hottub: {type: String, required: true},
+    shower: {type: String, required: true},
+
+
     no_of_reviews: {type: String, required: true},
+    review1_name: {type: String, required: true},
+    review1: {type: String, required: true},
+
+    review2_name: {type: String, required: true},
+    review2: {type: String, required: true},
+
+    review3_name: {type: String, required: true},
+    review3: {type: String, required: true},
+
 
 },
 {
