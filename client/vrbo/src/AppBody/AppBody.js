@@ -9,7 +9,7 @@ function AppBody() {
           <small style={{ color: "gray" }}>
             Book homes with space, convenience and amenities
           </small>
-          <p>Anurag</p>
+       
         </div>
       </div>
     </div>
