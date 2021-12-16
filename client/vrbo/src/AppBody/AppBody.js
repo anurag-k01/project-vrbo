@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import styles from "./AppBody.module.css";
+import axios from "axios";
 
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 function AppBody() {
+  axios
+    .get("http://localhost:2238/city")
+    .then(function (res) {
+      console.log(res);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
   const [visible, setVisible] = useState(true);
   const handleShow = () => {
     if (!visible) {
@@ -106,9 +115,6 @@ function AppBody() {
             {visible ? <ExpandLessIcon /> : <ExpandMoreOutlinedIcon />}
           </div>
         </div>
-
-
-        
       </div>
     </div>
   );
