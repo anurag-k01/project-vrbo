@@ -1,5 +1,5 @@
 import React from "react";
-import BookingSearcBar from "../Components/BookingSearcBar";
+
 import Navbar from "../Components/Navbar";
 
 import AppBody from "../AppBody/AppBody";
@@ -9,8 +9,20 @@ function Homepage() {
   return (
     <>
       <Navbar />
+
       <div style={{ display: "flex", justifyContent: "center" }}>
         <img src="./carousal.jpg" alt="Carousal" style={{ width: "100%" }} />
+        
+        <div style={{ position: "absolute", width: "100%" }}>
+          <h1 style={{ position: "absolute", color: "white" }}>
+            Beach house? Condo? Cabin?
+          </h1>
+        </div>
+        <div style={{ position: "absolute", width: "100%", marginTop: "20px"}}>
+          <h1 style={{ position: "absolute", color: "white" }}>
+            Find the perfect vacation rental
+          </h1>
+        </div>
       </div>
       {/*<BookingSearcBar />*/}
       {/* REcent Clicked */}
