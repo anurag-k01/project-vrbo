@@ -13,10 +13,14 @@ const placeController = require("./controllers/placeController")
 
 const cityController = require("./controllers/cityController")
 
+const userController = require("./controllers/userController")
+
 //
 app.use("/place", placeController)
 
 app.use("/city", cityController)
+
+app.use(userController)
 
 
 app.listen(port, async() => {
