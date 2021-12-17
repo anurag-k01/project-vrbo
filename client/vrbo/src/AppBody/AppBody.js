@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./AppBody.module.css";
 import axios from "axios";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
@@ -12,7 +13,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -24,16 +25,20 @@ const responsive = {
   },
 };
 function AppBody() {
-  const [image, setImage] = useState([]);
-  axios
-    .get("http://localhost:2238/city")
-    .then(function (res) {
-      let n = res.data;
-      setImage(n.city);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+  const [city, setCity] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:2238/city")
+      .then(function (res) {
+        let n = res.data;
+        setCity(n.city);
+        console.log(n.city);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  });
+
   const [visible, setVisible] = useState(true);
   const handleShow = () => {
     if (!visible) {
@@ -136,17 +141,53 @@ function AppBody() {
             {visible ? <ExpandLessIcon /> : <ExpandMoreOutlinedIcon />}
           </div>
 
-          <div className={styles.bestPlaces}>
-            <h3>Get inspired for a family trip</h3>
-            <small style={{ color: "gray" }}>
-              Book homes with space, convenience and amenities
-            </small>
-            <div className={styles.placesCarousel}>
-              {image &&
-                image.map((el) => (
-                  <img key={el.id} src={el.image_url} alt="images" />
+          <div className={styles.bestPlaces} style={{ marginTop: "30px" }}>
+            <h2 style={{ marginBottom: "10px" }}>
+              Get inspired for a family trip
+            </h2>
+
+            <Carousel responsive={responsive}>
+              {city &&
+                city.map((el) => (
+                  <div>
+                    <img
+                      key={el.id}
+                      src={el.image_url}
+                      alt="images"
+                      style={{
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        width: "290px",
+                      }}
+                    />
+                    <h4>{el.city_name}</h4>
+                  </div>
                 ))}
-            </div>
+            </Carousel>
+          </div>
+          <div className={styles.bestPlaces} style={{ marginTop: "30px" }}>
+            <h2 style={{ marginBottom: "10px" }}>
+              Best places in the United States for going to the beach
+            </h2>
+
+            <Carousel responsive={responsive}>
+              {city &&
+                city.map((el) => (
+                  <div>
+                    <img
+                      key={el.id}
+                      src={el.image_url}
+                      alt="images"
+                      style={{
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        width: "290px",
+                      }}
+                    />
+                    <h4>{el.city_name}</h4>
+                  </div>
+                ))}
+            </Carousel>
           </div>
         </div>
       </div>
