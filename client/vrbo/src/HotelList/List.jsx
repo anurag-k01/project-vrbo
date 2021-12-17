@@ -40,6 +40,7 @@ function List() {
 		});
 		setData(arr);
 	}
+	console.log(data);
 	function be(value) {
 		const arr = main.filter((e) => {
 			return e.bedroom_heading <= value;
