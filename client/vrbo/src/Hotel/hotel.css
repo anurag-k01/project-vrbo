@@ -1,0 +1,171 @@
+.line{
+    width: 100%;
+    height: 1px;
+    margin-top: 150px;
+    background-color: rgb(216, 207, 207);
+}
+.path{
+    font-weight: 500;
+    font-size: .875rem;
+    color: grey;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: FreightSansLF Pro,Noto Sans JP,Noto Sans KR,Helvetica Neue,Helvetica,Arial,Lucida Grande,Segoe UI,Tahoma,-apple-system,Roboto,sans-serif;
+}
+.name{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 80%;
+}
+.heart{
+     color: red;
+     margin-right: 8px;
+     font-size: 25px;
+}
+.svbtn{
+        color: grey;
+        border: 1px solid grey;
+        border-radius: 20px;
+}
+.container1{
+    width:71%;
+    height: 100vh;
+    overflow: auto;
+  
+    float: left;
+}
+#box::-webkit-scrollbar { width: 0 !important }
+.container2{
+    /* position: fixed; */
+    background: white;
+    width: 28%;
+    height: 630px;
+    border-left: 1px solid grey;
+    
+    float: left;
+    /* margin-left: 70%; */
+    margin-left: 11px;
+}
+.price{
+    font-size: 35px;
+   
+    /* margin: 20px; */
+}
+#night{
+    font-size: 15px;
+}
+.date{
+    margin-top: 20px;
+    width: 350px;
+    height: 160px;
+    border-radius: 8px;
+    /* border: 1px solid grey; */
+    float: Right;
+}
+.box1{
+    width: 45%;
+    cursor: pointer;
+    height: 40%;
+    float: left;
+}
+.box2{
+    width: 45%;
+    height: 40%;
+   margin-left: 10px;
+    float: left;
+    cursor: pointer;
+}
+.box3{
+    width: 92%;
+    height: 50px;
+    border-radius: 8px;
+   border:1px solid grey;
+   clear: both;
+   margin-top: 10px;
+   cursor: pointer;
+}
+
+#guest{
+    color: blue;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+#gbox{
+    display: none;
+    width: 350px;
+    height: 230px;
+   background: white;
+    float: right;
+    position: absolute;
+   
+    margin-top: 50px;
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.people{
+    font-size: 15px;
+    
+}
+.max{
+   float: left;
+   margin-top: 16px;
+   margin-left: 5px;
+   font-size: 12px;
+}
+.con1{
+    clear: both;
+    float: left;
+    width: 40%;
+}
+.con1{
+    float: left;width: 40%;
+}
+.to{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.tt{
+    float: left;
+    font-size:  20px; 
+    font-weight: bolder;
+    margin-left: 40px;
+}
+.ru{
+    float: "left";
+    margin-left: 260px;
+    font-size:  20px; 
+    font-weight: bolder;
+}
+#free{
+    text-align: center;
+    margin-top: 15px;
+}
+#ig{
+    float: left;
+    margin-left: 40px;
+}
+.img2{
+    width: 30%;
+    float: left;
+    margin-left: 23px;
+    margin-top: 10px;
+}
+.nav{
+   margin-top:10px;
+    font-weight: 100;
+    height: 30px;
+    float: left;
+    margin-left: 30px;
+    cursor: pointer;
+    color: grey;
+    font-family: FreightSansLF Pro,Noto Sans JP,Noto Sans KR,Helvetica Neue,Helvetica,Arial,Lucida Grande,Segoe UI,Tahoma,-apple-system,Roboto,sans-serif;
+}
+.nav:hover{
+    color: black;
+}
