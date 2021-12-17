@@ -1,14 +1,35 @@
 import React, { useState } from "react";
 import styles from "./AppBody.module.css";
 import axios from "axios";
-
+import "react-multi-carousel/lib/styles.css";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 function AppBody() {
+  const [image, setImage] = useState([]);
   axios
     .get("http://localhost:2238/city")
     .then(function (res) {
-      console.log(res);
+      let n = res.data;
+      setImage(n.city);
     })
     .catch(function (err) {
       console.log(err);
@@ -113,6 +134,19 @@ function AppBody() {
           <div onClick={handleShow} className={styles.handleShow}>
             View More ideas{" "}
             {visible ? <ExpandLessIcon /> : <ExpandMoreOutlinedIcon />}
+          </div>
+
+          <div className={styles.bestPlaces}>
+            <h3>Get inspired for a family trip</h3>
+            <small style={{ color: "gray" }}>
+              Book homes with space, convenience and amenities
+            </small>
+            <div className={styles.placesCarousel}>
+              {image &&
+                image.map((el) => (
+                  <img key={el.id} src={el.image_url} alt="images" />
+                ))}
+            </div>
           </div>
         </div>
       </div>
