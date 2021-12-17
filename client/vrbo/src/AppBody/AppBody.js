@@ -7,7 +7,6 @@ import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -157,9 +156,9 @@ function AppBody() {
                       style={{
                         borderRadius: "5px",
                         cursor: "pointer",
-                        width: "290px",
+           width: "290px",
                       }}
-                    />
+    />
                     <h4>{el.city_name}</h4>
                   </div>
                 ))}
