@@ -1,0 +1,163 @@
+#header{
+    width: 100%;
+    height: 130px;
+    background-color: #f5f4f3;
+    position: fixed;
+}
+.input{
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+}
+#box1{
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 7px;
+    margin-left: 130px;
+    /* clear: both; */
+    float: left;
+    display: none;
+    position: absolute;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+}
+.p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+.btn{
+    font-size: 35px;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 10px;
+    width: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+#box2{
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 7px;
+    margin-left: 220px;
+    /* clear: both; */
+    float: left;
+    position: absolute;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    
+}
+#box3{
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 7px;
+    margin-left: 320px;
+    /* clear: both; */
+    float: left;
+    position: absolute;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    
+}
+#box4{
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 7px;
+    margin-left: 450px;
+    /* clear: both; */
+    float: left;
+    position: absolute;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+}
+#container1{
+    width: 70%;
+    float: left;
+    /* overflow: auto; */
+}
+#container2{
+    width: 25%;
+    height: 500px;
+    float: left;
+    position: fixed;
+    margin-left: 73%;
+    
+}
+.line{
+    width: 100%;
+    background-color: grey;
+    height: 1px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.img{
+    width: 100%;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 230px;
+}
+.house{
+   
+    margin-left: 50px;
+    text-decoration: none;
+    color:  grey;
+    margin-top: 20px;
+}
+.namea{
+    width: 550px;
+    margin-left: 50px;
+    text-decoration: none;
+    color:  black;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    
+}
+.sleep{
+    margin-left: 50px;
+    text-decoration: none;
+    color:  grey;
+   
+    font-size: 15px;
+    margin-top: 10px;
+}
+.until{
+    margin-left: 330px;
+    text-decoration: none;
+    color:  grey;
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 50px;
+
+}
+.price{
+    margin-left: 330px;
+    text-decoration: none;
+    color:  black;
+   font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.review{
+    margin-left: 50px;
+    text-decoration: none;
+    color:  black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+}
