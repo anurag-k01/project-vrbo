@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 
 function List() {
+  document.title = "Top 50 Gulf Shores Vacation Rentals | Vrbo";
   const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
   const [price, setPrice] = React.useState(100);
   const [sleep, setSleep] = React.useState(1);
