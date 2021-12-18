@@ -14,19 +14,17 @@ function Homepage() {
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <img src="./carousal.jpg" alt="Carousal" style={{ width: "100%" }} />
-
         </div>
-     
+
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            position: "relative",
+
             marginTop: "-40px",
           }}
         >
           <AppBody />
-         
         </div>
       </Link>
     </>
