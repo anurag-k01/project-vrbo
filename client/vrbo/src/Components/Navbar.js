@@ -6,14 +6,16 @@ import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import Login from "../Authentication/Login";
-
+import {Link } from 'react-router-dom'
 function Navbar() {
   const [show, setShow] = useState(false);
   return (
     <div className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.headerLogo}>
-          <img src="./logo.svg" alt="vrbo_logo" />
+          <Link to="/">
+            <img src="./logo.svg" alt="vrbo_logo" />
+          </Link>
         </div>
         <div className={styles.headerRight}>
           <div className={styles.headerOption}>

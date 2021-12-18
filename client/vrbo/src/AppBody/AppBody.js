@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -57,12 +58,16 @@ function AppBody() {
               Book homes with space, convenience and amenities
             </small>
             <div className={styles.inspiredGrid}>
-              <div className={styles.gridOne}>
-                <img
-                  src="https://odis.homeaway.com/odis/destination/a8f63526-cf00-4610-a6c4-810d1b12cd9f.hw2.jpg"
-                  alt="Pic1"
-                />
-              </div>
+              <Link to="/search">
+                <div className={styles.gridOne}>
+                  <img
+                    src="https://odis.homeaway.com/odis/destination/a8f63526-cf00-4610-a6c4-810d1b12cd9f.hw2.jpg"
+                    alt="Pic1"
+                    style={{ height: "450px", width: "600px" }}
+                  />
+                </div>
+              </Link>
+              {/*<Link to="/search">*/}
               <div className={styles.gridTwo}>
                 <div className={styles.innerGridOne}>
                   <div className={styles.innerGrid}>
@@ -93,6 +98,7 @@ function AppBody() {
                   </div>
                 </div>
               </div>
+              {/*</Link>*/}
             </div>
 
             {/**new Grid */}

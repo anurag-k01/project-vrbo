@@ -46,9 +46,34 @@ function Footer() {
         find vacation home rentals with additional features such as waterfront
         views, a private pool or hot
       </p>
-          <p>tub, or outdoor entertainment space.</p>
-          
-          
+      <p>tub, or outdoor entertainment space.</p>
+      <div>
+        <div style={{ background: "rgb(249,248,247)" }}>
+          <img
+            src="https://csvcus.homeaway.com/rsrcs/cdn-logos/5.8.0/sitename/vrbo/web/logo.svg"
+            alt=""
+          />
+        </div>
+        <div style={{ display: "flex", background: "rgb(249,248,247)" }}>
+          <div>
+            <h4>Explore Vrbo</h4>
+            <p>List your property</p>
+            <p>Book with Confidence</p>
+            <p>Trust & Safety</p>
+            <p>Partner resources</p>
+            <p>Vacation rental guides</p>
+          </div>
+          <div style={{ marginLeft: "100px" }}>
+            <h4>Meet the Vrbo family</h4>
+            
+            <p>Vrbo</p>
+            <p>Abritel.fr</p>
+            <p>FeWo-direkt.de</p>
+            <p>Bookabach.co.nz</p>
+            <p>Stayz.com.au</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
