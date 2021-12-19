@@ -2,7 +2,7 @@
 	"name": "vrbo",
 	"version": "0.1.0",
 	"private": true,
-	"proxy":"http://localhost:2238",
+	"proxy": "http://localhost:2238",
 	"dependencies": {
 		"@emotion/react": "^11.7.1",
 		"@emotion/styled": "^11.6.0",
@@ -13,6 +13,7 @@
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
+		"axios": "^0.24.0",
 		"date-fns": "^2.27.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
