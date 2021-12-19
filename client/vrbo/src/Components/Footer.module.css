@@ -1,0 +1,14 @@
+.footer {
+  background-color: rgb(249, 248, 247);
+  margin-left: -300px;
+  margin-right: -150px;
+  padding-left: 300px;
+}
+h2 {
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 5px;
+  font-weight: 100;
+}

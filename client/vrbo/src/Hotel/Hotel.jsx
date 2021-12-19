@@ -10,34 +10,56 @@ import { BsUpload } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import Stack from "@mui/material/Stack";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import MobileDatePicker from "@mui/lab/MobileDatePicker";
+import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import { AiOutlineStar } from "react-icons/ai";
+import Navbar from "../Components/Navbar";
 function Hotel() {
-	const [checkIn, setCheckIn] = React.useState(new Date("2022-01-14T21:11:54"));
-	const [checkOut, setCheckOut] = React.useState(
-		new Date("2022-02-25T21:11:54"),
-	);
+	const [checkIn, setCheckIn] = React.useState("");
+	const [checkOut, setCheckOut] = React.useState("");
 
+	var data = JSON.parse(localStorage.getItem("testObject"));
+	console.log(data);
 	const [adult, setAdult] = useState(1);
 	const [child, setChild] = useState(0);
 	const [guest, setGuest] = useState(1);
-	const [price, setPrice] = useState(15);
+	const [price, setPrice] = useState(data.price);
+	function chIn() {
+		var date = document.getElementById("ind").value;
+		setCheckIn(date);
+	}
+	function chOut() {
+		var date = document.getElementById("ino").value;
+		setCheckOut(date);
+	}
+
 	const handleChange = (newValue) => {
 		setCheckIn(newValue);
 	};
 	const handleChange2 = (newValue) => {
 		setCheckOut(newValue);
 	};
+	function store(a, b, c, d) {
+		var arr = {
+			from: a,
+			to: b,
+			people: c,
+			price:d
+		}
+		localStorage.setItem("payment", JSON.stringify(arr));
+	}
 	return (
-		<div>
-			<Link to='/hotel'>
+		<>
+			<Navbar />
+			<div style={{ height: "72px" }}></div>
+			<div>
 				<div className='line'></div>
 				<div className='container1' id='box'>
 					<div className='path'>India / Himanchal Pradesh / Shimla</div>
 					<div
 						className='name'
 						style={{ float: "left", textDecoration: "none", color: "black" }}>
-						Independent floor near Shimla Airport with natural views
+						{data.heading1}
 					</div>
 					<div style={{ float: "left", marginLeft: "10px" }}>
 						<div style={{ marginTop: "10px" }}>
@@ -69,7 +91,7 @@ function Hotel() {
 					</div>
 					<div>
 						<img
-							src='https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/cf70fe72.f10.jpg'
+							src={data.image1_url}
 							width='95%'
 							height='350px'
 							style={{
@@ -80,27 +102,27 @@ function Hotel() {
 						/>
 						<div className='img2'>
 							<img
-								src='https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/005e8954.f10.jpg'
+								src={data.image2_url}
 								width='100%'
 								style={{ borderRadius: "10px" }}
 							/>
 						</div>
 						<div className='img2'>
 							<img
-								src='https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/f9e3e948.f6.jpg'
+								src={data.image3_url}
 								width='100%'
 								style={{ borderRadius: "10px" }}
 							/>
 						</div>
 						<div className='img2'>
 							<img
-								src='https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/e67079b1.f6.jpg'
+								src={data.image4_url}
 								width='100%'
 								style={{ borderRadius: "10px" }}
 							/>
 						</div>
 					</div>
-					<div>
+					<div style={{ clear: "both" }}>
 						<div
 							className='nav'
 							style={{ borderBottom: "2px solid black", color: "black" }}>
@@ -148,7 +170,7 @@ function Hotel() {
 								fontSize: "20px",
 								color: "black",
 							}}>
-							House
+							{data.cabin_heading}
 						</div>
 						<div
 							style={{
@@ -157,7 +179,7 @@ function Hotel() {
 								fontSize: "13px",
 								marginTop: "5px",
 							}}>
-							800 sq ft
+							{data.area}
 						</div>
 					</div>
 					<div
@@ -174,7 +196,7 @@ function Hotel() {
 								marginLeft: "30px",
 								color: "black",
 							}}>
-							2 Bedrooms
+							{data.bedroom_heading} bedrooms
 						</div>
 						<div
 							style={{
@@ -183,7 +205,7 @@ function Hotel() {
 								fontSize: "13px",
 								marginTop: "5px",
 							}}>
-							2 Beds - Sleeps 5
+							{data.no_of_beds}
 						</div>
 					</div>
 					<div
@@ -200,7 +222,7 @@ function Hotel() {
 								marginLeft: "30px",
 								color: "black",
 							}}>
-							1 Bathroom
+							{data.bathroom_heading}
 						</div>
 						<div
 							style={{
@@ -209,7 +231,7 @@ function Hotel() {
 								fontSize: "13px",
 								marginTop: "5px",
 							}}>
-							1 Full Bath
+							{data.no_of_bathrooms}
 						</div>
 					</div>
 					<div
@@ -235,7 +257,7 @@ function Hotel() {
 								fontSize: "13px",
 								marginTop: "5px",
 							}}>
-							KitchenLiving
+							{data.spaces}
 						</div>
 					</div>
 					<div style={{ marginLeft: "30px" }}>
@@ -259,16 +281,7 @@ function Hotel() {
 							marginLeft: "30px",
 							marginTop: "20px",
 						}}>
-						It is an independent first floor of double storeyed villa having two
-						bed rooms, dining and drawing room,kitchen,bathroom, covered terrace
-						and a newly added large open Terrace with steel-glass railings
-						giving a natural view of hills and towns around.It is at the base of
-						a hillock on which Airport is located.A small stream down below adds
-						charm to those who love nature and peace.All the facilities exists
-						in the house-24hrs water,light, modern kitchen with fridge,gas
-						stove, microwave and essential crockery, bathroom with English
-						seat,gyzer,shower and washing machine,full bedding,outdoor
-						furniture,WiFi etc
+						{data.description}
 					</div>
 					<div style={{ marginTop: "20px" }}>
 						<img
@@ -277,6 +290,45 @@ function Hotel() {
 							height='400'
 						/>
 					</div>
+					<div
+						style={{
+							marginLeft: "50px",
+							fontSize: "25px",
+							fontWeight: "bold",
+						}}>
+						Ratings
+					</div>
+					<div style={{ float: "left" }}>
+						<AiOutlineStar
+							style={{
+								marginLeft: "50px",
+								fontSize: "25px",
+								color: "orange",
+								marginTop: "20px",
+							}}
+						/>
+					</div>
+					<div
+						style={{
+							float: "left",
+							marginTop: "20px",
+							fontSize: "25px",
+							marginLeft: "10px",
+						}}>
+						{data.ratings}
+					</div>
+					<div style={{ clear: "both", marginLeft: "50px", marginTop: "40px" }}>
+						1. {data.review1}
+					</div>
+					<div style={{ marginLeft: "50px", marginTop: "20px" }}>
+						By- {data.review2_name}
+					</div>
+					<div style={{ clear: "both", marginLeft: "50px", marginTop: "40px" }}>
+						2. {data.review2}
+					</div>
+					<div style={{ marginLeft: "50px", marginTop: "20px" }}>
+						By- {data.review1_name}
+					</div>
 					<div style={{ marginTop: "20px" }}>
 						<img
 							src='https://dsm01pap003files.storage.live.com/y4m3v5eZgSqCkEpY8pUVktFvBbUxRghcBsLKECyFbkWiMgKcmLBg5qtStNJpBkvkJK74I-bdbtB0LmAJxwTjYrZIiZGqS8E0HmD8RKE4mg7xu7l9jQIPUwZaxVGbn28fmEbKR7peY3hJO4XsAArrI1rqbqu2QNRKrd-nEmHsYZCQrPdTtZOyKMsxTETc6iTO5DY?width=939&height=507&cropmode=none'
@@ -284,6 +336,7 @@ function Hotel() {
 							height='507'
 						/>
 					</div>
+
 					<div>
 						<div
 							style={{
@@ -313,45 +366,51 @@ function Hotel() {
 					{/* <div style={{ height: "200px", clear: "both" }}>d</div> */}
 				</div>
 				<div className='container2'>
-					<div className='price' style={{ color: "black" }}>
-						$15 <span id='night'>/night</span>
+					{/* <div className='price' style={{ color: "black" }}>
+					${data.price} <span id='night'>/night</span>
+				</div> */}
+					<div
+						style={{
+							marginLeft: "20px",
+							fontSize: "25px",
+							fontWeight: "bold",
+							marginTop: "20px",
+						}}>
+						${data.price} <span id='night'>/night</span>
 					</div>
 					<div style={{ color: "black" }}>
-						<BiErrorCircle style={{ marginLeft: "20px", color: "blue" }} />{" "}
+						<BiErrorCircle
+							style={{ marginLeft: "20px", color: "blue", marginTop: "10px" }}
+						/>{" "}
 						Please enter number of guests.
 					</div>
-					<div className='date'>
-						<div className='box1'>
-							{/* <div className='check'>Check In</div> */}
-							<LocalizationProvider dateAdapter={AdapterDateFns}>
-								<Stack>
-									<MobileDatePicker
-										label='CheckIn'
-										inputFormat='dd/MM/yyyy'
-										value={checkIn}
-										onChange={handleChange}
-										renderInput={(params) => <TextField {...params} />}
-									/>
-								</Stack>
-							</LocalizationProvider>
+					<div className='datee'>
+						<div style={{ float: "left", marginTop: "20px" }}>
+							<input
+								type='date'
+								id='ind'
+								onSelect={() => {
+									chIn();
+								}}
+								className='ddd'
+							/>
 						</div>
-						<div className='box2'>
-							<LocalizationProvider dateAdapter={AdapterDateFns}>
-								<Stack>
-									<MobileDatePicker
-										label='CheckOut'
-										inputFormat='dd/MM/yyyy'
-										value={checkOut}
-										onChange={handleChange2}
-										renderInput={(params) => <TextField {...params} />}
-									/>
-								</Stack>
-							</LocalizationProvider>
+						<div style={{ float: "left", marginTop: "20px" }}>
+							<input
+								type='date'
+								id='ino'
+								className='ddd'
+								onSelect={() => {
+									chOut();
+								}}
+							/>
 						</div>
+						<div style={{ clear: "both" }}></div>
 						<div
 							className='box3'
 							onClick={() => {
 								document.getElementById("gbox").style.display = "block";
+								document.getElementById("here").style.display = "none";
 							}}>
 							<div id='guest'>Guests</div>
 							<div className='to' style={{ color: "black" }}>
@@ -446,6 +505,7 @@ function Hotel() {
 									setGuest(adult);
 
 									document.getElementById("gbox").style.display = "none";
+									document.getElementById("here").style.display = "block";
 								}}
 								style={{
 									color: "white",
@@ -491,21 +551,27 @@ function Hotel() {
 						}}>
 						Or as low as $107/mo with Affirm. Learn more
 					</div>
-					<div>
-						<Button
-							variant='outlined'
-							style={{
-								color: "white",
-								backgroundColor: "blue",
-								width: "200px",
-								borderRadius: "20px",
-								fontWeight: "bold",
-								marginTop: "40px",
-								marginLeft: "100px",
-								fontSize: "20px",
-							}}>
-							Book Now
-						</Button>
+					<div id='here'>
+						<Link to='/payment'>
+							<Button
+								variant='outlined'
+								style={{
+									color: "white",
+									backgroundColor: "blue",
+									width: "200px",
+									borderRadius: "20px",
+									fontWeight: "bold",
+									marginTop: "20px",
+									marginLeft: "100px",
+									fontSize: "20px",
+									textDecoration: "none",
+								}}
+								onClick={() => {
+									store(checkIn, checkOut, guest, price * adult-100+21);
+								}}>
+								Book Now
+							</Button>
+						</Link>
 					</div>
 					<div id='free' style={{ color: "black" }}>
 						Free cancellation until Dec 31, 2021
@@ -546,8 +612,8 @@ function Hotel() {
 						Property # 986937
 					</div>
 				</div>
-			</Link>
-		</div>
+			</div>
+		</>
 	);
 }
 export default Hotel;
