@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import Button from "@mui/material/Button";
-
+import Login from "../Authentication/Login";
+import {Link } from 'react-router-dom'
 function Navbar() {
+  const [show, setShow] = useState(false);
   return (
     <div className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.headerLogo}>
-          <img src="./logo.svg" alt="vrbo_logo" />
+          <Link to="/">
+            <img src="./logo.svg" alt="vrbo_logo" />
+          </Link>
         </div>
         <div className={styles.headerRight}>
           <div className={styles.headerOption}>
@@ -29,10 +32,11 @@ function Navbar() {
             </h4>
           </div>
           <div className={styles.headerOption}>
-            <h4>
+            <h4 onClick={() => setShow(true)}>
               <PersonAddAlt1OutlinedIcon />
               Sign up
             </h4>
+            <Login onClose={() => setShow(false)} show={show} />
           </div>
           <div className={styles.headerOption}>
             <h4>

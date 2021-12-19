@@ -52,7 +52,8 @@
 }
 .price{
     font-size: 35px;
-    margin: 20px;
+   
+    /* margin: 20px; */
 }
 #night{
     font-size: 15px;
