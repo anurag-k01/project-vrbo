@@ -43,13 +43,12 @@
     /* position: fixed; */
     background: white;
     width: 28%;
-    height: 530px;
-    border-top: 1px solid grey;
+    height: 630px;
     border-left: 1px solid grey;
-    position: fixed;
+    
     float: left;
     /* margin-left: 70%; */
-    margin-left: 70%;
+    margin-left: 11px;
 }
 .price{
     font-size: 35px;
@@ -60,19 +59,15 @@
     font-size: 15px;
 }
 .date{
-    margin-top: 0px;
-    width: 300px;
+    margin-top: 20px;
+    width: 350px;
     height: 160px;
     border-radius: 8px;
     /* border: 1px solid grey; */
     float: Right;
 }
-.ddd{
-    margin-left: 15px;
-    font-size: 15px;
-}
 .box1{
-    width: 10%;
+    width: 45%;
     cursor: pointer;
     height: 40%;
     float: left;
@@ -85,14 +80,13 @@
     cursor: pointer;
 }
 .box3{
-    width: 85%;
+    width: 92%;
     height: 50px;
     border-radius: 8px;
    border:1px solid grey;
    clear: both;
-   margin-top: 20px;
+   margin-top: 10px;
    cursor: pointer;
-   margin-left: 20px;
 }
 
 #guest{
@@ -107,9 +101,8 @@
    background: white;
     float: right;
     position: absolute;
-   background: white;
-  
-    margin-top: 0px;
+   
+    margin-top: 50px;
     border-radius: 10px;
     /* border: 2px solid black; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -142,14 +135,12 @@
     font-size:  20px; 
     font-weight: bolder;
     margin-left: 40px;
-    margin-top: 20px;
 }
 .ru{
-    float: left;
-    margin-left: 190px;
+    float: "left";
+    margin-left: 260px;
     font-size:  20px; 
     font-weight: bolder;
-    margin-top: 20px;
 }
 #free{
     text-align: center;

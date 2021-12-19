@@ -8,77 +8,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Button from "@mui/material/Button";
 function Payment() {
 	var data = JSON.parse(localStorage.getItem("testObject"));
-	var pay = JSON.parse(localStorage.getItem("payment"));
-	var fdate = "";
-	var fmon = "";
-	var temp = "";
-	var temp1 = "";
-	var tdate = "";
-	var tmon = "";
-	for (var i = 8; i <= 9; i++) {
-		fdate += pay.from[i];
-	}
-	for (var i = 5; i <= 6; i++) {
-		temp += pay.from[i];
-		if (temp == "01") {
-			fmon += "Jan";
-		} else if (temp == "02") {
-			fmon += "Feb";
-		} else if (temp == "03") {
-			fmon += "Mar";
-		} else if (temp == "04") {
-			fmon += "Apr";
-		} else if (temp == "05") {
-			fmon += "May";
-		} else if (temp == "06") {
-			fmon += "Jun";
-		} else if (temp == "07") {
-			fmon += "Jul";
-		} else if (temp == "08") {
-			fmon += "Aug";
-		} else if (temp == "09") {
-			fmon += "Sep";
-		} else if (temp == "10") {
-			fmon += "Oct";
-		} else if (temp == "11") {
-			fmon += "Nov";
-		} else if (temp == "12") {
-			fmon += "Dec";
-		}
-	}
-	for (var i = 8; i <= 9; i++) {
-		tdate += pay.to[i];
-	}
-	for (var i = 5; i <= 6; i++) {
-		temp1 += pay.to[i];
-		if (temp1 == "01") {
-			tmon += "Jan";
-		} else if (temp1 == "02") {
-			tmon += "Feb";
-		} else if (temp1 == "03") {
-			tmon += "Mar";
-		} else if (temp1 == "04") {
-			tmon += "Apr";
-		} else if (temp1 == "05") {
-			tmon += "May";
-		} else if (temp1 == "06") {
-			tmon += "Jun";
-		} else if (temp1 == "07") {
-			tmon += "Jul";
-		} else if (temp1 == "08") {
-			tmon += "Aug";
-		} else if (temp1 == "09") {
-			tmon += "Sep";
-		} else if (temp1 == "10") {
-			tmon += "Oct";
-		} else if (temp1 == "11") {
-			tmon += "Nov";
-		} else if (temp1 == "12") {
-			tmon += "Dec";
-		}
-	}
-	console.log(fmon, tmon);
-
+	console.log(data);
 	return (
 		<>
 			<div className='container'>
@@ -193,18 +123,16 @@ function Payment() {
 						and to receive booking-related texts. Standard messaging rates may
 						apply.
 					</div>
-					<Link to='/gateway'>
-						<Button
-							style={{
-								backgroundColor: "blue",
-								color: "white",
-								float: "right",
-								marginTop: "20px",
-							}}
-							variant='outlined'>
-							Agree & Continue
-						</Button>
-					</Link>
+					<Button
+						style={{
+							backgroundColor: "blue",
+							color: "white",
+							float: "right",
+							marginTop: "20px",
+						}}
+						variant='outlined'>
+						Agree & Continue
+					</Button>
 				</div>
 				<div className='box2'>
 					<div className='head'>
@@ -283,7 +211,7 @@ function Payment() {
 										color: "black",
 										fontWeight: "bold",
 									}}>
-									{fmon} {fdate}
+									Jan 14
 								</div>
 							</div>
 							<div className='checkk'>
@@ -304,7 +232,7 @@ function Payment() {
 										color: "black",
 										fontWeight: "bold",
 									}}>
-									{tmon} {tdate}
+									Feb 20
 								</div>
 							</div>
 							<div className='gu'>
@@ -325,7 +253,7 @@ function Payment() {
 										color: "black",
 										fontWeight: "bold",
 									}}>
-									{pay.people} guests
+									4 guests
 								</div>
 							</div>
 						</div>
@@ -337,16 +265,16 @@ function Payment() {
 								padding: "20px",
 								float: "left",
 							}}>
-							Price
+							$6.00 x 42 nights
 						</div>
 						<div
 							style={{
-								marginLeft: "240px",
+								marginLeft: "150px",
 								color: "grey",
 								padding: "20px",
 								float: "left",
 							}}>
-							${pay.price}.00
+							$252.00
 						</div>
 						<div
 							style={{
@@ -406,7 +334,7 @@ function Payment() {
 								marginTop: "20px",
 								fontWeight: "bold",
 							}}>
-							${pay.price - 100 + 21}.00
+							$172.20
 						</div>
 						<hr
 							style={{

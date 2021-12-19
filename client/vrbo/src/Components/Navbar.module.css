@@ -3,8 +3,6 @@
   background-color: rgb(249, 248, 247);
   /* border: 1px solid black; */
   height: 72px;
-  width: 100%;
-  position: fixed;
 }
 .headerInner {
   display: flex;
