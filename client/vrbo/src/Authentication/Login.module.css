@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_content {
+  width: 440px;
+  height: 600px;
+  background-color: #fff;
+}
+
+.modal_header {
+  position: absolute;
+  width: 32.3%;
+  background-color: rgb(32, 81, 170);
+  height: 270px;
+  padding: 10px;
+}
+.modal_footer {
+  margin-left: 370px;
+ 
+}
+.modal_title {
+  color: #fff;
+  padding-left: 20px;
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 100 !important;
+  font-family: FreightSansLF Pro, Noto Sans JP, Noto Sans KR, Helvetica Neue,
+    Helvetica, Arial, Lucida Grande, Segoe UI, Tahoma, -apple-system, Roboto,
+    sans-serif;
+}
+.modal_body {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}

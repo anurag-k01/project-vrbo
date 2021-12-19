@@ -11,8 +11,10 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { AiOutlineStar } from "react-icons/ai";
 import { useEffect } from "react";
+import Navbar from "../Components/Navbar";
 
 function List() {
+	document.title = "Top 50 Gulf Shores Vacation Rentals | Vrbo";
 	const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
 	const [price, setPrice] = React.useState(100);
 	const [sleep, setSleep] = React.useState(1);
@@ -68,8 +70,10 @@ function List() {
 
 	return (
 		<>
+			<Navbar />
+			<div style={{ height: "72px" }}></div>
 			<div id='header'>
-				<div className='input'>
+				<div style={{ float: "left", marginTop: "10px", marginLeft: "20px" }}>
 					<TextField id='outlined-basic' label='Where' variant='outlined' />
 				</div>
 				<div
@@ -110,7 +114,7 @@ function List() {
 						</Stack>
 					</LocalizationProvider>
 				</div>
-				<div className='input'>
+				<div style={{ float: "left", marginTop: "10px", marginLeft: "20px" }}>
 					<TextField id='outlined-basic' label='Guest' variant='outlined' />
 				</div>
 				<div style={{ clear: "both" }}>
@@ -203,7 +207,11 @@ function List() {
 						</button>
 						<Button
 							variant='outlined'
-							style={{ marginLeft: "45px", marginTop: "10px" }}
+							style={{
+								marginLeft: "45px",
+								marginTop: "10px",
+								backgroundColor: "white",
+							}}
 							onClick={() => {
 								pr(price);
 								document.getElementById("box1").style.display = "none";
@@ -234,7 +242,11 @@ function List() {
 						</button>
 						<Button
 							variant='outlined'
-							style={{ marginLeft: "45px", marginTop: "10px" }}
+							style={{
+								marginLeft: "45px",
+								marginTop: "10px",
+								backgroundColor: "white",
+							}}
 							onClick={() => {
 								be(bed);
 								document.getElementById("box3").style.display = "none";
@@ -266,7 +278,11 @@ function List() {
 						</button>
 						<Button
 							variant='outlined'
-							style={{ marginLeft: "45px", marginTop: "10px" }}
+							style={{
+								marginLeft: "45px",
+								marginTop: "10px",
+								backgroundColor: "white",
+							}}
 							onClick={() => {
 								ra(rating);
 								document.getElementById("box4").style.display = "none";
@@ -286,7 +302,7 @@ function List() {
 							}}>
 							<div className='line'></div>
 							<div style={{ float: "left", width: "280px" }}>
-								<img src={e.image1_url} alt='' className='img' />
+								<img src={e.image1_url} alt='' className='imgss' />
 							</div>
 							<div style={{ float: "left", marginLeft: "30px" }}>
 								<div className='house'>House - 3.7 mi to Manali Center</div>
