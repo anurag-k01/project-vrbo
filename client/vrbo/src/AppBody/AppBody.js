@@ -37,7 +37,7 @@ function AppBody() {
 	// }, []);
 	useEffect(() => {
 		axios
-			.get("http://localhost:2238/city")
+			.get("https://vrbo-api.herokuapp.com/city")
 			.then(function (res) {
 				let n = res.data;
 				setCity(n.city);

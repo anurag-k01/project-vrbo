@@ -27,12 +27,12 @@ function List() {
 	};
 	useEffect(() => {
 		axios
-			.get("http://localhost:2238/place")
+			.get("https://vrbo-api.herokuapp.com/place")
 			.then((result) => setData(result.data.place));
 	}, []);
 	useEffect(() => {
 		axios
-			.get("http://localhost:2238/place")
+			.get("https://vrbo-api.herokuapp.com/place")
 			.then((result) => setMain(result.data.place));
 	}, []);
 	console.log(main);
