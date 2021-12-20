@@ -3,6 +3,7 @@ import "./hotel.css";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import MobileDatePicker from "@mui/lab/MobileDatePicker";
 import TextField from "@mui/material/TextField";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
@@ -25,28 +26,29 @@ function Hotel() {
 	const [guest, setGuest] = useState(1);
 	const [price, setPrice] = useState(data.price);
 
-	const handleChange = (newValue) => {
-		setCheckIn(newValue);
-	};
-	const handleChange2 = (newValue) => {
-		setCheckOut(newValue);
-	};
+	function handle() {
+		setCheckIn(document.getElementById("da").value);
+	}
+	function handle1() {
+		setCheckOut(document.getElementById("das").value);
+	}
 	function store(a, b, c, d) {
 		var arr = {
 			from: a,
 			to: b,
 			people: c,
-			price:d
-		}
+			price: d,
+		};
 		localStorage.setItem("payment", JSON.stringify(arr));
 	}
 	return (
-		<>
+		<div>
 			<Navbar />
 			<div style={{ height: "72px" }}></div>
+
 			<div>
-				  <div className='line'></div>
-				  <div className='container1' id='box'>
+				<div className='line'></div>
+				<div className='container1' id='box'>
 					<div className='path'>India / Himanchal Pradesh / Shimla</div>
 					<div
 						className='name'
@@ -376,33 +378,30 @@ function Hotel() {
 						/>{" "}
 						Please enter number of guests.
 					</div>
-					<div className='datee'>
-						<div style={{ float: "left", marginTop: "20px" }}>
-							<input
-								type='date'
-								id='ind'
-								onSelect={() => {
-									chIn();
-								}}
-								className='ddd'
-							/>
-						</div>
-						<div style={{ float: "left", marginTop: "20px" }}>
-							<input
-								type='date'
-								id='ino'
-								className='ddd'
-								onSelect={() => {
-									chOut();
-								}}
-							/>
-						</div>
-						<div style={{ clear: "both" }}></div>
+					<div>
+						<input
+							type='date'
+							id='da'
+							onSelect={() => {
+								handle();
+							}}
+							style={{ marginLeft: "20px", marginTop: "10px" }}
+						/>
+
+						<input
+							type='date'
+							id='das'
+							onSelect={() => {
+								handle1();
+							}}
+							style={{ marginLeft: "20px", marginTop: "10px" }}
+						/>
+
 						<div
 							className='box3'
 							onClick={() => {
 								document.getElementById("gbox").style.display = "block";
-								document.getElementById("here").style.display = "none";
+								document.getElementById("hr").style.display = "none";
 							}}>
 							<div id='guest'>Guests</div>
 							<div className='to' style={{ color: "black" }}>
@@ -430,296 +429,179 @@ function Hotel() {
 								<div style={{ fontWeight: "bold" }}>{adult} Adults</div>
 								<div style={{ color: "grey" }}>18+</div>
 
-          <div>
-            <div
-              style={{
-                marginLeft: "50px",
-                fontSize: "30px",
-                fontWeight: "bold",
-                marginTop: "30px",
-                color: "black",
-              }}
-            >
-              Map
-            </div>
-            <div style={{ marginTop: "20px" }}>
-              <img
-                src="https://dsm01pap003files.storage.live.com/y4m2nSoxn8dwXp3yBndcdRgmhA9i71EP3eR-SOYNMCWeLtDBbT180tmtxnfwaHYiEmjLbjEgCuofuPZarLCX0lXw-TUdkPo8-vKd5Yi6UfotaFWTf_jIISaWjpW23WXhLlcydMQnjALQkLdPMEKzfp7v0qJOrd1MxM38WsA9kZz1WgPEP0ao2XkHAaNfgw7YVus?width=933&height=549&cropmode=none"
-                width="933"
-                height="549"
-              />
-            </div>
-            <div style={{ marginTop: "40px" }}>
-              <img
-                src="https://dsm01pap003files.storage.live.com/y4mMBnwWRIM6dm3Lgi5bqBnMdDS0ypdVNjfzoR1C7UKPcK53YxMzUg068LrtCdSfYCTAzxACYEOMlJhyyO4I4UwRsHULuqQCot2C88xX2xm1xOQ10gEomBIK3ZvWuLqqgUq5LP-cver9xyzGIFnEJMedAsAXIDtGvxED2YtpA1jjMfvy7qZvdusfnU_lqfY3lOs?width=949&height=556&cropmode=none"
-                width="949"
-                height="556"
-              />
-            </div>
-          </div>
-          {/* <div style={{ height: "200px", clear: "both" }}>d</div> */}
-        </div>
-        <div className="container2">
-          {/* <div className='price' style={{ color: "black" }}>
-					${data.price} <span id='night'>/night</span>
-				</div> */}
-          <div
-            style={{
-              marginLeft: "20px",
-              fontSize: "25px",
-              fontWeight: "bold",
-              marginTop: "20px",
-            }}
-          >
-            ${data.price} <span id="night">/night</span>
-          </div>
-          <div style={{ color: "black" }}>
-            <BiErrorCircle
-              style={{ marginLeft: "20px", color: "blue", marginTop: "10px" }}
-            />{" "}
-            Please enter number of guests.
-          </div>
-          <div className="date">
-            <div className="box1">
-              {/* <div className='check'>Check In</div> */}
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <Stack>
-                  <MobileDatePicker
-                    label="CheckIn"
-                    inputFormat="dd/MM/yyyy"
-                    value={checkIn}
-                    onChange={handleChange}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </Stack>
-              </LocalizationProvider>
-            </div>
-            <div className="box2">
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <Stack>
-                  <MobileDatePicker
-                    label="CheckOut"
-                    inputFormat="dd/MM/yyyy"
-                    value={checkOut}
-                    onChange={handleChange2}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </Stack>
-              </LocalizationProvider>
-            </div>
-            <div
-              className="box3"
-              onClick={() => {
-                document.getElementById("gbox").style.display = "block";
-              }}
-            >
-              <div id="guest">Guests</div>
-              <div className="to" style={{ color: "black" }}>
-                {guest} guests
-              </div>
-            </div>
-          </div>
-          <div id="gbox">
-            <div className="people">
-              <div style={{ float: "left" }}>
-                <IoIosPeople
-                  style={{
-                    marginLeft: "15px",
-                    marginTop: "8px",
-                    fontSize: "30px",
-                  }}
-                />
-              </div>
-              <div className="max">
-                Maximum number of guests is 5 Children not allowed
-              </div>
-            </div>
-            <div className="con1">
-              <div style={{ marginLeft: "20px", marginTop: "10px" }}>
-                <div style={{ fontWeight: "bold" }}>{adult} Adults</div>
-                <div style={{ color: "grey" }}>18+</div>
-                
-
-                <div style={{ marginTop: "10px", fontWeight: "bold" }}>
-                  {child} Childrens
-                </div>
-                <div style={{ color: "grey" }}>(0-17)</div>
-              </div>
-            </div>
-            <div className="con2">
-              <div style={{ marginLeft: "200px" }}>
-                <div style={{ float: "left" }}>
-                  <Button
-                    variant="outlined"
-                    onClick={() => {
-                      if (adult > 1) {
-                        setAdult(adult - 1);
-                      }
-                    }}
-                    style={{
-                      borderRadius: "30px",
-                      fontSize: "23px",
-                    }}
-                  >
-                    -
-                  </Button>
-                </div>
-                <div style={{ float: "left", marginLeft: "5px" }}>
-                  <Button
-                    variant="outlined"
-                    onClick={() => {
-                      if (adult < 5) {
-                        setAdult(adult + 1);
-                      }
-                    }}
-                    style={{ borderRadius: "30px", fontSize: "23px" }}
-                  >
-                    +
-                  </Button>
-                </div>
-              </div>
-              <div style={{ marginLeft: "200px" }}>
-                <div style={{ float: "left", marginTop: "10px" }}>
-                  <Button
-                    variant="outlined"
-                    disabled
-                    style={{ borderRadius: "30px", fontSize: "23px" }}
-                  >
-                    -
-                  </Button>
-                </div>
-                <div
-                  style={{
-                    float: "left",
-                    marginTop: "10px",
-                    marginLeft: "5px",
-                  }}
-                >
-                  <Button
-                    variant="outlined"
-                    disabled
-                    style={{ borderRadius: "30px", fontSize: "23px" }}
-                  >
-                    +
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Button
-                variant="outlined"
-                onClick={() => {
-                  setGuest(adult);
-
-                  document.getElementById("gbox").style.display = "none";
-                }}
-                style={{
-                  color: "white",
-                  backgroundColor: "blue",
-                  float: "right",
-                  borderRadius: "20px",
-                  fontWeight: "bold",
-                  marginRight: "18px",
-                  marginTop: "20px",
-                }}
-              >
-                Apply
-              </Button>
-            </div>
-          </div>
-          <div>
-            <div className="tt" style={{ color: "black" }}>
-              Total
-            </div>
-            <div className="ru" style={{ color: "black" }}>
-              ${price * adult}.00
-            </div>
-            <div
-              style={{
-                clear: "both",
-                float: "left",
-                marginLeft: "42px",
-                fontSize: "12px",
-                color: "black",
-              }}
-            >
-              Total includes fees, not tax
-            </div>
-            <div style={{ float: "left", marginLeft: "78px", color: "blue" }}>
-              View Details
-            </div>
-          </div>
-          <div
-            style={{
-              clear: "both",
-              marginLeft: "40px",
-              fontSize: "13px",
-              marginTop: "40px",
-              color: "black",
-            }}
-          >
-            Or as low as $107/mo with Affirm. Learn more
-          </div>
-          <div>
-            <Button
-              variant="outlined"
-              style={{
-                color: "white",
-                backgroundColor: "blue",
-                width: "200px",
-                borderRadius: "20px",
-                fontWeight: "bold",
-                marginTop: "40px",
-                marginLeft: "100px",
-                fontSize: "20px",
-              }}
-            >
-              Book Now
-            </Button>
-          </div>
-          <div id="free" style={{ color: "black" }}>
-            Free cancellation until Dec 31, 2021
-          </div>
-          <hr style={{ marginTop: "15px", color: "black" }} />
-          <div>
-            <div id="ig">
-              <img
-                src="https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/005e8954.f10.jpg"
-                alt=""
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  background: "red",
-                  borderRadius: "50%",
-                  marginTop: "20px",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                float: "left",
-                marginLeft: "20px",
-                fontSize: "17px",
-                marginTop: "25px",
-                color: "black",
-              }}
-            >
-              Rameshwar Singh Thakur
-              <div style={{ fontSize: "13px", color: "blue" }}>
-                Contact Host
-              </div>
-            </div>
-            <div style={{ clear: "both" }}></div>
-          </div>
-          <hr style={{ marginTop: "20px", color: "black" }} />
-          <div
-            style={{ textAlign: "center", marginTop: "10px", color: "black" }}
-          >
-            Property # 986937
-          </div>
-        </div>
-      </div>
-    </>
-  );
+								<div style={{ marginTop: "10px", fontWeight: "bold" }}>
+									{child} Childrens
+								</div>
+								<div style={{ color: "grey" }}>(0-17)</div>
+							</div>
+						</div>
+						<div className='con2'>
+							<div style={{ marginLeft: "200px" }}>
+								<div style={{ float: "left" }}>
+									<Button
+										variant='outlined'
+										onClick={() => {
+											if (adult > 1) {
+												setAdult(adult - 1);
+											}
+										}}
+										style={{
+											borderRadius: "30px",
+											fontSize: "23px",
+										}}>
+										-
+									</Button>
+								</div>
+								<div style={{ float: "left", marginLeft: "5px" }}>
+									<Button
+										variant='outlined'
+										onClick={() => {
+											if (adult < 5) {
+												setAdult(adult + 1);
+											}
+										}}
+										style={{ borderRadius: "30px", fontSize: "23px" }}>
+										+
+									</Button>
+								</div>
+							</div>
+							<div style={{ marginLeft: "200px" }}>
+								<div style={{ float: "left", marginTop: "10px" }}>
+									<Button
+										variant='outlined'
+										disabled
+										style={{ borderRadius: "30px", fontSize: "23px" }}>
+										-
+									</Button>
+								</div>
+								<div
+									style={{
+										float: "left",
+										marginTop: "10px",
+										marginLeft: "5px",
+									}}>
+									<Button
+										variant='outlined'
+										disabled
+										style={{ borderRadius: "30px", fontSize: "23px" }}>
+										+
+									</Button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<Button
+								variant='outlined'
+								onClick={() => {
+									setGuest(adult);
+									document.getElementById("hr").style.display = "block";
+									document.getElementById("gbox").style.display = "none";
+								}}
+								style={{
+									color: "white",
+									backgroundColor: "blue",
+									float: "right",
+									borderRadius: "20px",
+									fontWeight: "bold",
+									marginRight: "18px",
+									marginTop: "20px",
+								}}>
+								Apply
+							</Button>
+						</div>
+					</div>
+					<div>
+						<div className='tt' style={{ color: "black" }}>
+							Total
+						</div>
+						<div className='ru' style={{ color: "black" }}>
+							${price * adult}.00
+						</div>
+						<div
+							style={{
+								clear: "both",
+								float: "left",
+								marginLeft: "42px",
+								fontSize: "12px",
+								color: "black",
+							}}>
+							Total includes fees, not tax
+						</div>
+						<div style={{ float: "left", marginLeft: "78px", color: "blue" }}>
+							View Details
+						</div>
+					</div>
+					<div
+						style={{
+							clear: "both",
+							marginLeft: "40px",
+							fontSize: "13px",
+							marginTop: "40px",
+							color: "black",
+						}}>
+						Or as low as $107/mo with Affirm. Learn more
+					</div>
+					<div id='hr'>
+						<Link to="/payment">
+						<Button
+							onClick={() => {
+								store(checkIn, checkOut, guest, price);
+							}}
+							variant='outlined'
+							style={{
+								color: "white",
+								backgroundColor: "blue",
+								width: "200px",
+								borderRadius: "20px",
+								fontWeight: "bold",
+								marginTop: "40px",
+								marginLeft: "100px",
+								fontSize: "20px",
+							}}>
+							Book Now
+						</Button></Link>
+					</div>
+					<div id='free' style={{ color: "black" }}>
+						Free cancellation until Dec 31, 2021
+					</div>
+					<hr style={{ marginTop: "15px", color: "black" }} />
+					<div>
+						<div id='ig'>
+							<img
+								src='https://media.vrbo.com/lodging/20000000/19490000/19488100/19488081/005e8954.f10.jpg'
+								alt=''
+								style={{
+									width: "50px",
+									height: "50px",
+									background: "red",
+									borderRadius: "50%",
+									marginTop: "20px",
+								}}
+							/>
+						</div>
+						<div
+							style={{
+								float: "left",
+								marginLeft: "20px",
+								fontSize: "17px",
+								marginTop: "25px",
+								color: "black",
+							}}>
+							Rameshwar Singh Thakur
+							<div style={{ fontSize: "13px", color: "blue" }}>
+								Contact Host
+							</div>
+						</div>
+						<div style={{ clear: "both" }}></div>
+					</div>
+					<hr style={{ marginTop: "20px", color: "black" }} />
+					<div
+						style={{ textAlign: "center", marginTop: "10px", color: "black" }}>
+						Property # 986937
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 export default Hotel;

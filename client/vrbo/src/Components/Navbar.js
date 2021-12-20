@@ -18,6 +18,7 @@ function Navbar() {
 
 	function del() {
 		localStorage.removeItem("login");
+		window.location.href = "http://localhost:3000/";
 	}
 	// console.log(data);
 	const [show, setShow] = useState(false);

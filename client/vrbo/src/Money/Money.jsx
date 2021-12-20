@@ -173,7 +173,7 @@ function Money() {
 							fontSize: "30px",
 							marginTop: "20px",
 						}}>
-						Amount- ${pay.price}
+						Amount- ${pay.price - 100 + 21}
 					</div>
 				</div>
 			</div>

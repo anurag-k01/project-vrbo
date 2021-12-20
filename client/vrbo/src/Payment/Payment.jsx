@@ -254,17 +254,29 @@ function Payment() {
 					</div>
 					<div className='pay'>
 						<span>
-							<img src={data.image1_url} alt='' className='imm' />
+							<img
+								src={data.image1_url}
+								height='113px'
+								alt=''
+								className='imm'
+							/>
 						</span>
 						<span>
-							<img src={data.image2_url} alt='' className='im' />
+							<img src={data.image2_url} height='113px' alt='' className='im' />
 						</span>
 						<span>
-							<img src={data.image3_url} alt='' className='imm' />
+							<img
+								src={data.image3_url}
+								height='113px'
+								alt=''
+								className='imm'
+							/>
 						</span>
 						<div className='headd'>{data.heading1}</div>
 						<div className='headdd'>Manali, HP, IN</div>
-						<div className='date'>
+						<div
+							className='date'
+							style={{ marginLeft: "50px", borderRadius: "10px" }}>
 							<div className='check'>
 								<div
 									style={{
