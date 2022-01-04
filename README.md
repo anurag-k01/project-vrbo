@@ -1,4 +1,4 @@
-# Newegg
+# Vrbo
 Project Title: Vrbo Replica
 
 Vrbo is an American vacation rental online marketplace originally known as Vacation Rentals.
